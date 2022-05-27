@@ -18,8 +18,9 @@ $usuario = $resultado->fetch(PDO::FETCH_ASSOC);
 
 if ($usuario) {
  
-  echo "Usuario y contraseña son iguales puedes acceder";
-  header("location:sesion.php");
+
+   header("location:sesion.php");
+  
 }
 else{
 	echo "Error en la autenticacion el correo y la contraseña no son iguales";
