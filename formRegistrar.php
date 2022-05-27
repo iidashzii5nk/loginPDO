@@ -10,7 +10,7 @@
 <!---------------------FORMULARIO PARA REGISTRARSE--------------------------------------------->				
 						<form action="insertar.php" method="post">
 							<div class="requerido">
-								<h3>DATOS PERSONALES</h3>
+								<h3>Registro de usuarios</h3>
 								<p>*Campos requeridos</p>
 							</div>
 							

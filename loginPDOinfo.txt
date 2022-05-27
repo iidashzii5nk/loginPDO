@@ -3,3 +3,7 @@ https://www.youtube.com/watch?v=uDNfxOoLzSI&ab_channel=pildorasinformaticas ->  
 https://www.youtube.com/watch?v=cVmR1o573fA&list=PLU8oAlHdN5BkinrODGXToK9oPAlnJxmW_&index=55&ab_channel=pildorasinformaticas -> explican esta linea = $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 https://www.youtube.com/watch?v=rKUbNFgjI8Y&list=PLU8oAlHdN5BkinrODGXToK9oPAlnJxmW_&index=56&ab_channel=pildorasinformaticas -> PHP MySql. PDO Insertar y eliminar registros en BBDD. Vídeo 56
+
+El validar el usuario que esta logueado es lo mismo que el iniciar sesion solo con MYSQL solo falto validar que el usuario no se repita en PDO
+
+Abrir las dos carpetas iniciarsesion - iniciarsesionPDO y guiarce para sacar el archivo validar no es mucho el cambio en el archivo de validar el usuario con _SESSION session_start()
