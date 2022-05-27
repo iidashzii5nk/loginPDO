@@ -2,32 +2,18 @@
 include('conexionPDO.php');
 
 
-      $name = trim($_POST['name']);//trim remueve los espacios del principio y del final
-      $email = trim($_POST['email']);
-      $password = trim($_POST['password']);
-      $fechareg = date("d/m/y");//Date automaticamente me toma la fecha actual y y la registra
+$name = $_POST['name']; //trim remueve los espacios del principio y del final
+$email = $_POST['email'];
+$password = $_POST['password'];
+$fechareg = date("d/m/y"); //Date automaticamente me toma la fecha actual y y la registra
 
-      $consulta = "INSERT INTO datos(nombre, email, contraseña, fecha_reg) VALUES ('$name','$email', '$password', '$fechareg')";
+$consulta = "INSERT INTO datos(nombre, email, contraseña, fecha_reg) VALUES (:name, :email, :password, :fecha)";
 
-      //Esto valida si el usuario es repetido antes de registrarlo solo funciona con MYSQLI no con PDO
-      //$verificar_usuario = mysqli_query($con, "SELECT * FROM datos WHERE email = '$email'");
 
-      $resultado=$con->prepare($consulta);
-      if (mysqli_num_rows($verificar_usuario) > 0) {
-        echo '<script>
-              alert ("El usuario ya existe");
-              window.history.go(-1);//Funcion para devolvernos a la pagina anterior
-             </script>';
-            
-       exit;
-      }
+$resultado = $con->prepare($consulta);
 
-      $resultado = mysqli_query($con,$consulta);
-      if($resultado) {
-        echo 'Registrado';
-    
-      }else{
-      echo 'No registrado';
-      }
+$resultado->execute(array(":name" => $name, ":email" => $email, ":password" => $password, ":fecha" => $fechareg));
 
-?>
+echo "Registro insertado";
+
+$resultado->closeCursor();
